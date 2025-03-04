@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ruesca Natural</title>
+        
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <script type="module" src="./assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    </head>
+<body>
+    <header class="header">
+        <img src="" class="logo">
+        <ul>
+            <li>
+                <a href="#">Inicio</a>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">About</a></li>
+            </li>
+        </ul>
+    </header>
+
+    <main class="main">
+        <div id="particles-js"></div>
+        <div class="dadcontainer">
+            <div class="container">
+                <img src="./assets/storage/img/banner.jpg" alt="">
+                <div class="text-overlay">Título del producto</div>
+            </div>
+
+            <!-- Div con partículas -->
+
+            <div class="container">
+                <img src="./assets/storage/img/banner.jpg" alt="">
+                <div class="text-overlay">Título del producto</div>
+            </div>
+
+
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 50 },
+                        shape: { type: "circle" },
+                        size: { value: 3 },
+                        move: { speed: 2 },
+                        opacity: { value: 0.7 },
+                        line_linked: { enable: false }
+                    }
+                });
+            });
+        </script>
+        <!-- segundo row -->
+        <div class="gallery">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Lil' Guys">
+                </div>
+                <div class="caption">Lil' Guys</div>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Declaraciones más">
+                </div>
+                <div class="caption">Declaraciones más</div>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Poco mantenimiento">
+                </div>
+                <div class="caption">Poco mantenimiento</div>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Poco mantenimiento">
+                </div>
+                <div class="caption">Poco mantenimiento</div>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Poco mantenimiento">
+                </div>
+                <div class="caption">Poco mantenimiento</div>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="./assets/storage/img/tarro1.png" alt="Poco mantenimiento">
+                </div>
+                <div class="caption">Poco mantenimiento</div>
+            </div>
+            
+        </div>
+
+        <div class="boton-container">
+            <button class="boton">Ver Todo</button>
+        </div>
+
+        <section class="about-brand">
+    <div class="text-content">
+        <h2>Más sobre nuestra marca</h2>
+        <p>Cuenta quién eres, tus orígenes, tu proceso o lo que te inspira. Aprovecha tu creatividad. ¡Tú puedes! La manera en la que cuentes tu historia en línea puede marcar la diferencia.</p>
+        <button class="btn">LEER MÁS</button>
+    </div>
+    <div class="images">
+        <img src="./assets/storage/img/mascara.png" alt="Mascara de pestañas">
+    </div>
+</section>
+
+<!-- Nueva sección -->
+    <section class="about-brand">
+        <div class="images2">
+            <img src="./assets/storage/img/serum.png" alt="Serum facial">
+        </div>
+        <div class="text-content">
+            <h2>Nuestra filosofía</h2>
+            <p>Nos enfocamos en ofrecer productos de belleza con ingredientes naturales y envases sostenibles, comprometidos con el bienestar de nuestra comunidad y el medio ambiente.</p>
+            <button class="btn">DESCUBRIR MÁS</button>
+        </div>
+    </section>
+
+    </main>
+</body>
+</html>
