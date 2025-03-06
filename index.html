@@ -4,11 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ruesca Natural</title>
-        
+    
+        <!-- Estilos primero -->
         <link rel="stylesheet" href="./assets/css/style.css">
-        <script type="module" src="./assets/js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+        <!-- Librerías JS externas (GSAP y Particles.js) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    
+        <!-- Tu script de JavaScript -->
+        <script type="module" src="./assets/js/main.js" defer></script>
     </head>
+    
 <body>
     <header class="header">
         <img src="" class="logo">
@@ -32,11 +41,8 @@
             <!-- Div con partículas -->
 
             <div class="container">
-                <img src="./assets/storage/img/banner.jpg" alt="">
-                <div class="text-overlay">Título del producto</div>
+                <img src="./assets/storage/img/banner2.png" class="imagenTarjeta">
             </div>
-
-
         </div>
 
         <script>
@@ -103,29 +109,120 @@
             <button class="boton">Ver Todo</button>
         </div>
 
-        <section class="about-brand">
-    <div class="text-content">
-        <h2>Más sobre nuestra marca</h2>
-        <p>Cuenta quién eres, tus orígenes, tu proceso o lo que te inspira. Aprovecha tu creatividad. ¡Tú puedes! La manera en la que cuentes tu historia en línea puede marcar la diferencia.</p>
-        <button class="btn">LEER MÁS</button>
-    </div>
-    <div class="images">
-        <img src="./assets/storage/img/mascara.png" alt="Mascara de pestañas">
-    </div>
-</section>
-
 <!-- Nueva sección -->
-    <section class="about-brand">
-        <div class="images2">
-            <img src="./assets/storage/img/serum.png" alt="Serum facial">
+<section class="cloneable">
+    <div data-tabs="wrapper" class="tab-layout">
+      <div class="tab-layout-col">
+        <div class="tab-layout-container">
+          <div class="tab-container">
+            <div class="tab-container-top">
+              <h1 class="tab-layout-heading">Productos Principales</h1>
+              <div data-flip-button="wrap" data-tabs="nav" class="filter-bar"><button data-tabs="button" data-flip-button="button" class="filter-button active">
+                  <div class="filter-button__p">Uno</div>
+                  <div data-flip-button="bg" class="tab-button__bg"></div>
+                </button><button data-tabs="button" data-flip-button="button" class="filter-button">
+                  <div class="filter-button__p">Dos</div>
+                </button><button data-tabs="button" data-flip-button="button" class="filter-button">
+                  <div class="filter-button__p">Tres</div>
+                </button></div>
+            </div>
+            <div class="tab-container-bottom">
+              <div data-tabs="content-wrap" class="tab-content-wrap">
+                <div data-tabs="content-item" class="tab-content-item active">
+                  <h2 data-tabs-fade="" class="tab-content__heading">Los más vendidos</h2>
+                  <p data-tabs-fade="" class="content-p opacity--80">Estos son nuestros 3 productos más vendidos.</p>
+                </div>
+                <div data-tabs="content-item" class="tab-content-item">
+                  <h2 data-tabs-fade="" class="tab-content__heading">Fragments of Motion</h2>
+                  <p data-tabs-fade="" class="content-p opacity--80">Where design meets depth—an abstract dance of light and form.</p>
+                </div>
+                <div data-tabs="content-item" class="tab-content-item">
+                  <h2 data-tabs-fade="" class="tab-content__heading">Echoes in Orange</h2>
+                  <p data-tabs-fade="" class="content-p opacity--80">A journey through layered geometry and endless possibilities.</p>
+                </div>
+              </div>
+              <a id="form-button" href="./assets/pages/productos.html" class="tab-content__button w-inline-block">
+                <p class="content-p">Cónocelos Todos</p>
+                <div class="content-button__bg"></div>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="text-content">
-            <h2>Nuestra filosofía</h2>
-            <p>Nos enfocamos en ofrecer productos de belleza con ingredientes naturales y envases sostenibles, comprometidos con el bienestar de nuestra comunidad y el medio ambiente.</p>
-            <button class="btn">DESCUBRIR MÁS</button>
+      </div>
+      <div class="tab-layout-col">
+        <div data-tabs="visual-wrap" class="tab-visual-wrap">
+          <div data-tabs="visual-item" class="tab-visual-item active"><img src="https://cdn.prod.website-files.com/67726722d415dc401ae23cf6/677289e14dd4dbca1d8e5930_philip-oroni-IANBrm46bF0-unsplash%20(2).avif" loading="lazy" class="tab-image"></div>
+          <div data-tabs="visual-item" class="tab-visual-item"><img src="https://cdn.prod.website-files.com/67726722d415dc401ae23cf6/677289e19e4d013c6a4c5a1b_philip-oroni-Zx_G3LpNnV4-unsplash%20(1).avif" loading="lazy" class="tab-image"></div>
+          <div data-tabs="visual-item" class="tab-visual-item"><img src="https://cdn.prod.website-files.com/67726722d415dc401ae23cf6/677289e1c88b5b4c14d1e6fd_philip-oroni-h9N7bm-HRCo-unsplash.avif" loading="lazy" class="tab-image"></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
+    <!-- Nueva sección agregada -->
+    <div class="sectionaboutme">
+        <div class="sectionaboutme-image">
+            <img src="./assets/storage/img/imgg-od3-a_h_720q.png" alt="Nuevo concepto de belleza">
+        </div>
+        <div class="sectionaboutme-text">
+            <h1>Sobre mi </h1>
+            <p>
+                Creemos en la belleza como una forma de arte y expresión personal. Nos esforzamos por brindar experiencias únicas que realcen la confianza y elegancia de cada persona, con productos de alta calidad y servicios personalizados.
+            </p>
+        </div>
+    </div>
+
+    <!-- seccion de contacto -->
+
+    <div class="containerContacto">
+        <div class="text-section">
+            <div class="bubble">¡Hablemos! 📩</div>
+            <p class="parrafo">
+                Contáctame a través de mi línea de <strong>WhatsApp</strong> para conocer más sobre <strong>pedidos, precios</strong> y cualquier otra información que necesites.  
+                ¡Estoy aquí para ayudarte! 🚀
+            </p>
+    
+            <!-- Formulario -->
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Tu Nombre" required>
+                <textarea id="message" placeholder="Escribe tu mensaje" required></textarea>
+                <button type="submit" class="button">Enviar Mensaje</button>
+            </form>
+    
+            <!-- Botón de WhatsApp -->
+            <a id="whatsappButton" href="https://wa.me/573134024782?text=Hola,%20me%20gustaría%20obtener%20más%20información."
+                target="_blank" class="whatsapp-button">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                Hablar por WhatsApp
+            </a>
+        </div>
+    
+        <div class="image-section">
+            <img id="movingImage" src="./assets/storage/img/31246014-Photoroom.png" alt="Imagen decorativa">
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value;
+            let message = document.getElementById("message").value;
+        
+            let mailtoLink = `mailto:tucorreo@example.com?subject=Contacto de ${name}&body=Mensaje:%0A${message}`;
+            window.location.href = mailtoLink;
+        });
+    
+        // Efecto de movimiento en la imagen con el mouse
+        document.addEventListener("mousemove", (event) => {
+            const image = document.getElementById("movingImage");
+            let x = (window.innerWidth / 2 - event.clientX) / 50;
+            let y = (window.innerHeight / 2 - event.clientY) / 50;
+            image.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+    
+    
     </main>
 </body>
 </html>

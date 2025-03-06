@@ -39,3 +39,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// seccion de nuevo estilo
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("JS con GSAP cargado");
+
+    const buttons = document.querySelectorAll("[data-tabs='button']");
+    const contents = document.querySelectorAll("[data-tabs='content-item']");
+    const visuals = document.querySelectorAll("[data-tabs='visual-item']");
+
+    buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            buttons.forEach(btn => btn.classList.remove("active"));
+            contents.forEach(content => content.classList.remove("active"));
+            visuals.forEach(visual => visual.classList.remove("active"));
+
+            button.classList.add("active");
+            contents[index].classList.add("active");
+            visuals[index].classList.add("active");
+
+            // Animación con GSAP
+            gsap.fromTo(contents[index], { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 });
+            gsap.fromTo(visuals[index], { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5 });
+        });
+    });
+});
+
