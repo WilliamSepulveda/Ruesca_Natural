@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/productos.css">
-    <script type="module" src="../js/productos.js"></script>
-    <title>Productos</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Productos</title>
+
+        <link rel="stylesheet" href="../css/productos.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+        
+        <script type="module" src="../js/productos.js"></script>
+    </head>
+
 <body>
+    <div id="particles-js"></div>
+
     <header class="header">
         <img src="" class="logo">
         <ul>
@@ -21,12 +31,24 @@
 
 
     <div class="banner">
-        <img src="../storage/img/banner.jpg" alt="Banner">
-        <p>TODO LO QUE CRECE EN NUESTRO VIVERO</p>
+        <img src="../storage/img/monochrome-beauty-product-skincare.jpg" alt="Banner">
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 50 },
+                    shape: { type: "circle" },
+                    size: { value: 3 },
+                    move: { speed: 2 },
+                    opacity: { value: 0.7 },
+                    line_linked: { enable: false }
+                }
+            });
+        });
+    </script>
     
-    
-    <h2 style="text-align:center; margin: 20px 0;">COMPRAR</h2>
+    <h2 class="comprar">COMPRAR</h2>
     
     <div class="productos-container">
         <div class="producto">
