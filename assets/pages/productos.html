@@ -3,9 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/productos.css">
+    <script type="module" src="../js/productos.js"></script>
     <title>Productos</title>
 </head>
 <body>
+    <header class="header">
+        <img src="" class="logo">
+        <ul>
+            <li>
+                <a href="../../index.html">Inicio</a>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="./assets/pages/about.html">About</a></li>
+            </li>
+        </ul>
+    </header>
+
+
+    <div class="banner">
+        <img src="../storage/img/banner.jpg" alt="Banner">
+        <p>TODO LO QUE CRECE EN NUESTRO VIVERO</p>
+    </div>
     
+    
+    <h2 style="text-align:center; margin: 20px 0;">COMPRAR</h2>
+    
+    <div class="productos-container">
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 1">
+            <p>Producto 1</p>
+            <p>€20,00</p>
+        </div>
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 2">
+            <p>Producto 2</p>
+            <p>€25,00</p>
+        </div>
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 3">
+            <p>Producto 3</p>
+            <p>€30,00</p>
+        </div>
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 4">
+            <p>Producto 4</p>
+            <p>€15,00</p>
+        </div>
+
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 4">
+            <p>Producto 4</p>
+            <p>€15,00</p>
+        </div>
+
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 4">
+            <p>Producto 4</p>
+            <p>€15,00</p>
+        </div>
+
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 4">
+            <p>Producto 4</p>
+            <p>€15,00</p>
+        </div>
+
+        <div class="producto">
+            <img src="../storage/img/tarro1.png" alt="Producto 4">
+            <p>Producto 4</p>
+            <p>€15,00</p>
+        </div>
+    </div>
+
+   <!-- Modal para ver detalles del producto -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="Producto">
+        <h2 id="modal-title"></h2>
+        <p id="modal-price"></p>
+        <p id="modal-description">Descripción del producto...</p>
+    </div>
+</div>
+
 </body>
 </html>

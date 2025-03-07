@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Red Hat Mono", serif;
+}
+
+body {
+    font-family: "Red Hat Mono", serif;
+    font-style: normal;    
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #38383B;
+    }
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente */
+    padding: 10px; /* Espaciado interno */
+    background: transparent; 
+    background-color: #000000;
+    z-index: 10000;
+    position: sticky;
+}
+
+ul {
+    display: flex;
+    gap: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+    padding: 0; 
+    margin: 0;
+    margin-right: 55px;
+    font-family: "Red Hat Mono", serif;
+
+}
+
+li {
+    color: white;
+    font-size: 18px;
+}
+
+/* Opcional: para que los enlaces se vean mejor */
+li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
+    font-family: "Red Hat Mono", serif;
+
+}
+
+li a:hover {
+    color: #068227; /* Un gris claro al pasar el cursor */
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: 700px; /* Fijamos el tamaño del banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Imagen del banner */
+.banner img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    z-index: -1; /* Para que el texto quede por encima */
+}
+
+/* Estilos para el texto */
+.banner p {
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor visibilidad */
+    border-radius: 5px;
+}
+
+
+/* Contenedor de productos en una cuadrícula */
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 columnas */
+    gap: 70px;
+    padding: 20px;
+    width: 100%;
+    justify-items: center; /* Centrar los productos */
+}
+/* Producto */
+.producto {
+    flex: 0 0 calc(33.33% - 20px); /* 3 productos visibles */
+    min-width: 400px;
+    background: #5655559e;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+}
+
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.producto p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+
+
+
+/* Estilos de la barra de desplazamiento */
+.productos-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.productos-container::-webkit-scrollbar-thumb {
+    background: rgb(159, 157, 1);
+    border-radius: 10px;
+}
+
+.productos-container::-webkit-scrollbar-track {
+    background: #38383B;
+}
+
+
+
+/* Menú de pagos (inicialmente oculto) */
+.menu-pagos {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Clase que se activará cuando se haga scroll */
+.menu-pagos.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Fondo del modal */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none; /* Evita que sea clickeable cuando está oculto */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Contenedor del modal */
+.modal-content {
+    background: rgb(140, 140, 140);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    transform: translateY(-50px) scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Cuando el modal se muestra */
+.modal.show {
+    opacity: 1;
+    pointer-events: all; /* Reactivamos clics */
+}
+
+.modal.show .modal-content {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* Cerrar modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Imagen del producto en el modal */
+#modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
