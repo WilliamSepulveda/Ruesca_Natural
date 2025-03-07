@@ -21,6 +21,8 @@ body {
     padding: 10px; /* Espaciado interno */
     background: transparent; 
     background-color: #000000;
+    z-index: 10000;
+    position: sticky;
 }
 
 ul {
@@ -50,7 +52,20 @@ li a {
 li a:hover {
     color: #068227; /* Un gris claro al pasar el cursor */
 }
+.dadcontainer::-webkit-scrollbar {
+    width: 6px; /* Ancho del scroll */
+    height: 6px; /* Altura para scroll horizontal */
+}
 
+.dadcontainer::-webkit-scrollbar-thumb {
+    background-color: rgb(159, 157, 1); /* Color del scroll */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.dadcontainer::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Color del fondo del scroll */
+    border-radius: 10px;
+}
 
 .dadcontainer {
     display: flex;
@@ -141,6 +156,20 @@ li a:hover {
     text-align: center;
     margin-left: 2vw;
 }
+.gallery::-webkit-scrollbar {
+    width: 6px; /* Ancho del scroll */
+    height: 6px; /* Altura para scroll horizontal */
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background-color: rgb(159, 157, 1); /* Color del scroll */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.gallery::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Color del fondo del scroll */
+    border-radius: 10px;
+}
 
 .gallery-container {
     display: flex;
@@ -204,7 +233,7 @@ li a:hover {
 
 .boton {
     display: flex;
-    background-color: green;
+    background-color: #E8BD35;
     color: white;
     padding: 20px 40px;
     border-radius: 25px;
@@ -220,7 +249,7 @@ li a:hover {
 }
 
 .boton:hover {
-    background-color: darkgreen;
+    background-color: #b18801;
 }
 
 /* seccion de detalles de productos */
@@ -459,7 +488,22 @@ Osmo UI: https://slater.app/10324/23333.css */
     line-height: 1.6;
     margin-top: 5vh;
 }
+.botonMision{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 25px;
+    border: none;
+    transition: duration 2s;
+}
 
+
+.botonMision:hover{
+    background-color: #b18801;
+    color: white ;
+}
 .sectionaboutme-image {
     width: 50%;
     
@@ -548,12 +592,13 @@ Osmo UI: https://slater.app/10324/23333.css */
 }
 
 .bubble {
-    background: #00c9a7;
+    background: #b1880142;
+    
     color: white;
     padding: 20px;
     border-radius: 30px;
     font-size: 24px;
-    box-shadow: 0px 5px 15px rgba(0, 255, 150, 0.3);
+    box-shadow: 0px 5px 15px rgb(152, 102, 3);
 }
 
 .parrafo {
@@ -578,9 +623,9 @@ input, textarea {
 }
 
 .button {
-    background: #0072ff;
     color: white;
     padding: 15px 30px;
+    background: hsla(50, 100%, 48%, 0.384);
     margin-top: 10px;
     text-decoration: none;
     border-radius: 30px;
@@ -589,20 +634,20 @@ input, textarea {
     border: none;
     cursor: pointer;
     width: 100%;
-    box-shadow: 0px 5px 15px rgba(0, 114, 255, 0.3);
+    box-shadow: 0px 5px 15px rgba(140, 140, 140, 0.811);
 }
 
 .button:hover {
-    background: #00c9a7;
-    box-shadow: 0px 5px 20px rgba(0, 255, 150, 0.4);
+    background: #c97c0085;
+    box-shadow: 0px 5px 20px rgba(140, 140, 140, 0.811);
 }
 
 .whatsapp-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    background: #25D366;
+    margin-top: 40px;
+    background: #25d3655e;
     color: white;
     padding: 12px 20px;
     border-radius: 10px;
@@ -653,5 +698,24 @@ input, textarea {
 
     .button {
         width: 100%;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .item {
+        width: 48%; /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .item {
+        width: 30%; /* Tres columnas en pantallas grandes */
+    }
+}
+
+@media (min-width: 1440px) {
+    .item {
+        width: 22%; /* Cuatro columnas en pantallas muy grandes */
     }
 }
