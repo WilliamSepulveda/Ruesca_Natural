@@ -1,48 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    const modalTitle = document.getElementById("modal-title");
-    const modalPrice = document.getElementById("modal-price");
+    const modal = document.querySelector("#modal");
+    const modalImg = document.querySelector("#modal-img");
+    const modalTitle = document.querySelector("#modal-title");
+    const modalPrice = document.querySelector("#modal-price");
+    const modalDescription = document.querySelector("#modal-description");
     const closeModal = document.querySelector(".close");
-    const productos = document.querySelectorAll(".producto");
 
-    productos.forEach(producto => {
-        producto.addEventListener("click", () => {
+    // Seleccionar todos los botones de abrir modal
+    document.querySelectorAll(".open-modal").forEach(button => {
+        button.addEventListener("click", (event) => {
             // Obtener datos del producto
-            const imgSrc = producto.querySelector("img").src;
-            const title = producto.querySelector("p:nth-of-type(1)").textContent;
-            const price = producto.querySelector("p:nth-of-type(2)").textContent;
+            const title = button.getAttribute("data-title");
+            const price = button.getAttribute("data-price");
+            const imgSrc = button.getAttribute("data-img");
 
-            // Asignar valores al modal
-            modalImg.src = imgSrc;
+            // Asignar los valores al modal
             modalTitle.textContent = title;
             modalPrice.textContent = price;
+            modalImg.src = imgSrc;
 
-            // Mostrar el modal con animación
+            // Mostrar el modal
             modal.classList.add("show");
         });
     });
 
+    // Cerrar el modal al hacer clic en la "x"
     closeModal.addEventListener("click", () => {
         modal.classList.remove("show");
-
-        // Esperar a que termine la animación antes de ocultarlo completamente
-        setTimeout(() => {
-            modal.style.visibility = "hidden"; // Solo ocultamos sin bloquear
-        }, 400);
     });
 
-    // Cerrar el modal si se hace clic fuera del contenido
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            closeModal.click();
-        }
-    });
-
-    // Al abrir el modal, asegurarnos de que sea visible
-    modal.addEventListener("transitionend", () => {
-        if (modal.classList.contains("show")) {
-            modal.style.visibility = "visible";
+    // Cerrar el modal al hacer clic fuera de él
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.classList.remove("show");
         }
     });
 });

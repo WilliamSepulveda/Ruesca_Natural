@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const scrollContainer = document.querySelector(".dadcontainer");
     let scrollAmount = 0;
@@ -64,3 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".gallery-container");
+    const items = Array.from(container.children);
+
+    // 🔄 Clonamos los elementos para hacer el efecto de loop
+    items.forEach(item => {
+        let clone = item.cloneNode(true);
+        container.appendChild(clone);
+    });
+});

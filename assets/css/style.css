@@ -56,6 +56,12 @@ li a {
 li a:hover {
     color: #068227; /* Un gris claro al pasar el cursor */
 }
+.logo{
+    width: 100px;
+}
+
+
+
 .dadcontainer::-webkit-scrollbar {
     width: 6px; /* Ancho del scroll */
     height: 6px; /* Altura para scroll horizontal */
@@ -93,13 +99,6 @@ li a:hover {
 
 
 
-.text-overlay {
-    position: absolute;
-    bottom: 150px;
-    color: white;
-    border-radius: 5px;
-}
-
 #particles-js {
     position: absolute;
     width: 100%;
@@ -133,9 +132,6 @@ li a:hover {
     object-fit: cover;
 }
 
-
-
-
 .text-overlay {
     display: flex;
     position: absolute;
@@ -147,22 +143,7 @@ li a:hover {
     font-size: 4rem;
     border-radius: 5px;
 }
-.gallery {
-    gap: 50px;
-    /* background-color: red; */
-    display: flex;
-    margin-top: 15vh;
-    width: 90%;
-    row-gap: 30px;
-    padding: 20px;
-    text-align: center;
-    justify-content: center;
-    overflow-x: auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-left: 5vw;
-}
+
 .gallery::-webkit-scrollbar {
     width: 6px; /* Ancho del scroll */
     height: 6px; /* Altura para scroll horizontal */
@@ -178,37 +159,75 @@ li a:hover {
     border-radius: 10px;
 }
 
-.gallery-container {
+/* Estilos generales */
+.gallery {
+    width: 100%;
+    overflow: hidden; /* Oculta barras de desplazamiento */
+    background-color: #626060;
+    padding: 20px 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra la imagen y el texto */
-}
-
-.gallery-item {
-    background-color: #222;
-    box-shadow: 0px 0px 14px 0px #b18801;
-    width: 300px;
-    height: 400px;
-    display: flex;
-    position: relative;
-    align-items: center;
     justify-content: center;
 }
 
+/* Contenedor de la galería */
+.contenedorgallery {
+    display: flex;
+    gap: 20px;
+    animation: scrollLoop 5s linear infinite; /* Animación infinita */
+    white-space: nowrap; /* Evita saltos de línea */
+}
+
+/* Tarjetas de producto */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.311);
+    padding: 15px;
+    width: 250px;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Imágenes */
 .gallery-item img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.miel{
-    margin-left: 5vw;
-    margin-top: -5vh;
+/* Texto de cada producto */
+.caption {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
 }
 
-.imagenpequena  {
-    width: 10px;
+.caption p {
+    font-size: 14px;
+    color: #555;
 }
+
+.caption span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* Animación de scroll infinito */
+@keyframes scrollLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 
 .caption {
     margin-top: 10px;
@@ -307,18 +326,22 @@ Osmo UI: https://slater.app/10324/23333.css */
   
   .content-button__bg {
     z-index: -1;
-    background-color: #efeeec;
     border-radius: .25em;
     position: absolute;
     inset: 0%;
+    background-color: #000000;
   }
-  
+  .content-button__bg:hover{
+      width: 50px;
+    }
+
   .content-p {
-    margin: 0;
-    font-size: 1.25em;
-    line-height: 1.4;
+      margin: 0;
+      font-size: 1.25em;
+      line-height: 1.4;
   }
-  
+
+
   .tab-button__bg {
     z-index: 0;
     background-color: #efeeec0f;
@@ -683,45 +706,7 @@ input, textarea {
     transition: transform 0.2s ease-out;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .containerContacto {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px;
-    }
-    
-    .text-section, .image-section {
-        width: 100%;
-    }
-    
-    .image-section {
-        margin-top: 20px;
-    }
 
-    .button {
-        width: 100%;
-    }
-}
-
-
-@media (min-width: 600px) {
-    .item {
-        width: 48%; /* Dos columnas en pantallas medianas */
-    }
-}
-
-@media (min-width: 1024px) {
-    .item {
-        width: 30%; /* Tres columnas en pantallas grandes */
-    }
-}
-
-@media (min-width: 1440px) {
-    .item {
-        width: 22%; /* Cuatro columnas en pantallas muy grandes */
-    }
-}
 
 
 /* Estilos generales del footer */
@@ -860,3 +845,981 @@ input, textarea {
     height: 20px;
   }
   
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main{
+        overflow-x: hidden;
+    }
+    .dadcontainer{
+        width: 100%;
+        height: auto;
+    }
+    .container img {
+        height: 300px;
+        object-fit: cover;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* O el tamaño de la sección */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Para que esté en el fondo */
+        background: transparent;
+    }
+    .gallery-container {
+        width: 200px;
+        height: 280px;
+    }
+
+    .gallery-item img {
+        height: 150px;
+    }
+    .caption {
+        margin-top: 25vh;
+        font-size: 1.5rem;
+    }
+    
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    } 
+    .gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 35vw;
+        margin-bottom: 15px;
+    }
+
+    .containerContacto {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .text-section, .image-section {
+        width: 100%;
+    }
+    
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cloneable {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+
+    .tab-layout-heading {
+        font-size: 2.5em;
+        margin-top: -5vh;
+        
+    }
+    .tab-layout-col {
+        width: 50%;
+        position: relative;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        margin-top: -5vh;
+    }
+     
+    .content-button__bg, .tab-button__bg {
+        z-index: -1;
+        background-color: #7e7e7e;
+        border-radius: .25em;
+        position: absolute;
+        inset: 0; 
+    }
+    .tab-image{
+        margin-top: 5vh;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .tab-content-item {
+        display: none;
+        flex-direction: column;
+        gap: 1.25em;
+        position: absolute;
+        inset: auto 0% 0%;
+    }
+    
+    .tab-content-item.active {
+        display: flex;
+        margin-top: 25vh;
+    }
+    
+    .filter-bar {
+        background-color: #efeeec0f;
+        border: 1px solid #efeeec14;
+        border-radius: .5em;
+        padding: .5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-bottom: 12vh;
+        
+      }
+      
+    .filter-button {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1em 1.5em;
+        transition: border-color .2s;
+        
+    }
+    
+    .filter-button.active {
+        border-color: #efeeec4d;
+        border-radius: .25em;
+    }
+      
+    .tab-visual-wrap {
+        border-radius: .5em;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .tab-visual-item {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      
+      .tab-visual-item.active {
+        display: flex;
+    }  
+    .sectionaboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -25vh;
+        margin-bottom: 20vh;
+    } 
+    .sectionaboutme-text{
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 10vh;
+    }
+    .sectionaboutme-image{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2{
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .containerContacto{
+        margin-top: -20vh;
+    }
+    .footer-section {
+        margin-top: 15px;
+    }
+}
+
+
+@media (max-width: 375px) and (min-height: 700px){
+    .main{
+        overflow-x: hidden;
+    }
+    .dadcontainer{
+        width: 100%;
+        height: auto;
+    }
+    .container img {
+        height: 300px;
+        object-fit: cover;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* O el tamaño de la sección */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Para que esté en el fondo */
+        background: transparent;
+    }
+    .gallery-container {
+        width: 200px;
+        height: 280px;
+    }
+
+    .gallery-item img {
+        height: 150px;
+    }
+    .caption {
+        margin-top: 5vh;
+        font-size: 14px;
+    }
+    
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    } 
+    .gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 35vw;
+        margin-bottom: 15px;
+    }
+
+    .containerContacto {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .text-section, .image-section {
+        width: 100%;
+    }
+    
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cloneable {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+    
+    .tab-layout-heading {
+        font-size: 2.5em;
+        margin-top: 5vh;
+        
+        
+    }
+    .tab-layout-col {
+        width: 100%;
+        position: relative;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5vh;
+    }
+    .tab-image{
+        margin-top: 10vh;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .content-button__bg, .tab-button__bg {
+        z-index: -1;
+        background-color: #7e7e7e;
+        border-radius: .25em;
+        position: absolute;
+        inset: 0; 
+    }
+    
+    .tab-content-item {
+        display: none;
+        flex-direction: column;
+        gap: 1.25em;
+        position: absolute;
+        inset: auto 0% 0%;
+    }
+    
+    .tab-content-item.active {
+        display: flex;
+        margin-top: 25vh;
+    }
+    
+    .filter-bar {
+        background-color: #efeeec0f;
+        border: 1px solid #efeeec14;
+        border-radius: .5em;
+        padding: .5em;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-bottom: 12vh;
+    }
+    
+    .filter-button {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1em 1.5em;
+        transition: border-color .2s;
+        
+    }
+    
+    .filter-button.active {
+        border-color: #efeeec4d;
+        border-radius: .25em;
+    }
+    
+    .tab-visual-wrap {
+        border-radius: .5em;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        overflow: hidden;
+        
+    }
+    
+    .tab-visual-item {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 10px;
+        position: absolute;
+    }
+    
+    .tab-visual-item.active {
+        display: flex;
+    }  
+    .sectionaboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -25vh;
+        margin-bottom: 20vh;
+    } 
+    .sectionaboutme-text{
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 10vh;
+    }
+    .sectionaboutme-image{
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2{
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .containerContacto{
+        margin-top: -20vh;
+    }
+    .footer-section {
+        margin-top: 15px;
+    }
+}
+
+
+@media (max-width: 1444px) {
+    .main{
+        overflow-x: hidden;
+        padding: 10px;
+    }
+    .dadcontainer{
+        width: 100%;
+        height: auto;
+    }
+    .container img {
+        height: 300px;
+        object-fit: cover;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* O el tamaño de la sección */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Para que esté en el fondo */
+        background: transparent;
+    }
+    .gallery-container {
+        width: 200px;
+        height: 280px;
+        max-height: 300px;
+    }
+
+    .gallery-item img {
+        height: 150px;
+    }
+    .caption {
+        margin-top: 5vh;
+        font-size: 15px;
+    }
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    } 
+    .gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 35vw;
+        margin-bottom: 15px;
+    }
+
+    .containerContacto {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .text-section, .image-section {
+        width: 100%;
+    }
+    
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cloneable {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+
+    .tab-layout-heading {
+        font-size: 2.5em;
+        margin-top: -5vh;
+        
+    }
+    .tab-layout-col {
+        width: 50%;
+        position: relative;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        margin-top: -5vh;
+    }
+     
+    .content-button__bg, .tab-button__bg {
+        z-index: -1;
+        background-color: #7e7e7e;
+        border-radius: .25em;
+        position: absolute;
+        inset: 0; 
+    }
+    
+    .tab-content-item {
+        display: none;
+        flex-direction: column;
+        gap: 1.25em;
+        position: absolute;
+        inset: auto 0% 0%;
+    }
+    
+    .tab-content-item.active {
+        display: flex;
+        margin-top: 25vh;
+    }
+    
+    .filter-bar {
+        background-color: #efeeec0f;
+        border: 1px solid #efeeec14;
+        border-radius: .5em;
+        padding: .5em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-bottom: 12vh;
+        
+      }
+      
+    .filter-button {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1em 1.5em;
+        transition: border-color .2s;
+        
+    }
+    
+    .filter-button.active {
+        border-color: #efeeec4d;
+        border-radius: .25em;
+    }
+      
+    .tab-visual-wrap {
+        border-radius: .5em;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .tab-visual-item {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      
+      .tab-visual-item.active {
+        display: flex;
+    }  
+    .sectionaboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -25vh;
+        margin-bottom: 20vh;
+    } 
+    .sectionaboutme-text{
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 10vh;
+    }
+    .sectionaboutme-image{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2{
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .containerContacto{
+        margin-top: -20vh;
+    }
+    .footer-section {
+        margin-top: 15px;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .main{
+        overflow-x: hidden;
+    }
+    .dadcontainer{
+        width: 100%;
+        height: auto;
+    }
+    .container img {
+        height: auto;
+        object-fit: cover;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* O el tamaño de la sección */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Para que esté en el fondo */
+        background: transparent;
+    }
+    
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    } 
+    .gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 35vw;
+        margin-bottom: 15px;
+    }
+
+    .containerContacto {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .text-section, .image-section {
+        width: 100%;
+    }
+    
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cloneable {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+
+    .tab-layout-heading {
+        font-size: 2.5em;
+        margin-top: -5vh;
+        
+    }
+    .tab-layout-col {
+        width: 50%;
+        position: relative;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        margin-top: -5vh;
+    }
+     
+    .content-button__bg, .tab-button__bg {
+        z-index: -1;
+        background-color: #7e7e7e;
+        border-radius: .25em;
+        position: absolute;
+        inset: 0; 
+    }
+    
+    .tab-content-item {
+        display: none;
+        flex-direction: column;
+        gap: 1.25em;
+        position: absolute;
+        inset: auto 0% 0%;
+    }
+    
+    .tab-content-item.active {
+        display: flex;
+        margin-top: 25vh;
+    }
+    
+    .filter-bar {
+        background-color: #efeeec0f;
+        border: 1px solid #efeeec14;
+        border-radius: .5em;
+        padding: .5em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-bottom: 12vh;
+        
+      }
+      
+    .filter-button {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1em 1.5em;
+        transition: border-color .2s;
+        
+    }
+    
+    .filter-button.active {
+        border-color: #efeeec4d;
+        border-radius: .25em;
+    }
+      
+    .tab-visual-wrap {
+        border-radius: .5em;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .tab-visual-item {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      
+      .tab-visual-item.active {
+        display: flex;
+    }  
+    .sectionaboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -25vh;
+        margin-bottom: 0vh;
+    } 
+    .sectionaboutme-text{
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 10vh;
+    }
+    .sectionaboutme-image{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2{
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2 img {
+        margin-top: -8vh;
+        width: 70%;
+    }
+    .containerContacto{
+        margin-top: 2vh;
+    }
+    .footer-section {
+        margin-top: 15px;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+    .main{
+        overflow-x: hidden;
+    }
+    .dadcontainer{
+        width: 100%;
+        height: auto;
+    }
+    .container img {
+        height: 300px;
+        object-fit: cover;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 50vh; /* O el tamaño de la sección */
+        top: 0;
+        left: 0;
+        z-index: 1000; /* Para que esté en el fondo */
+        background: transparent;
+    }
+    .gallery {
+        margin-top: -300px;
+        width: 100%;
+        max-width: 1500px;
+        overflow-x: auto; /* Activa el desplazamiento horizontal */
+        overflow-y: hidden; /* Evita el desplazamiento vertical */
+        -webkit-overflow-scrolling: touch; /* Suaviza el scroll en móviles */
+        white-space: nowrap; /* Evita que los productos bajen de línea */
+        gap: 50px; /* Espacio entre los productos */
+    }
+    
+    .gallery-container {
+        display: flex;
+        flex-wrap: nowrap; /* Asegura que los productos se mantengan en línea */
+        width: max-content; /* Se ajusta al tamaño de los productos */
+        height: 100%;
+        padding: 10px;
+    }
+    
+    .gallery-container > * {
+        flex: 0 0 auto; /* Evita que los productos se encojan */
+        width: 150px; /* Ajusta el ancho de cada producto */
+        height: auto;
+    }
+    
+    .gallery::-webkit-scrollbar {
+        height: 8px;
+    } 
+    .gallery::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .gallery::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-left: 35vw;
+        margin-bottom: 15px;
+    }
+
+    .containerContacto {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .text-section, .image-section {
+        width: 100%;
+    }
+    
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .cloneable {
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+    }
+
+    .tab-layout-heading {
+        font-size: 2.5em;
+        margin-top: -5vh;
+        
+    }
+    .tab-layout-col {
+        width: 50%;
+        position: relative;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        margin-top: -5vh;
+    }
+     
+    .content-button__bg, .tab-button__bg {
+        z-index: -1;
+        background-color: #7e7e7e;
+        border-radius: .25em;
+        position: absolute;
+        inset: 0; 
+    }
+    
+    .tab-content-item {
+        display: none;
+        flex-direction: column;
+        gap: 1.25em;
+        position: absolute;
+        inset: auto 0% 0%;
+    }
+    
+    .tab-content-item.active {
+        display: flex;
+        margin-top: 25vh;
+    }
+    
+    .filter-bar {
+        background-color: #efeeec0f;
+        border: 1px solid #efeeec14;
+        border-radius: .5em;
+        padding: .5em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-bottom: 12vh;
+        
+      }
+      
+    .filter-button {
+        background: transparent;
+        border: 1px solid transparent;
+        padding: 1em 1.5em;
+        transition: border-color .2s;
+        
+    }
+    
+    .filter-button.active {
+        border-color: #efeeec4d;
+        border-radius: .25em;
+    }
+      
+    .tab-visual-wrap {
+        border-radius: .5em;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .tab-visual-item {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      
+      .tab-visual-item.active {
+        display: flex;
+    }  
+    .sectionaboutme{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: -25vh;
+        margin-bottom: 20vh;
+    } 
+    .sectionaboutme-text{
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 10vh;
+    }
+    .sectionaboutme-image{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .sectionaboutme-image2{
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .containerContacto{
+        margin-top: -20vh;
+    }
+    .footer-section {
+        margin-top: 15px;
+    }
+}
+
+
+
