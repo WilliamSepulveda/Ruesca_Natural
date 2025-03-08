@@ -148,12 +148,13 @@ li a:hover {
     border-radius: 5px;
 }
 .gallery {
+    gap: 50px;
     /* background-color: red; */
     display: flex;
     margin-top: 15vh;
-    width: 85%;
-    gap: 20px;
-    padding: 10px;
+    width: 90%;
+    row-gap: 30px;
+    padding: 20px;
     text-align: center;
     justify-content: center;
     overflow-x: auto;
@@ -185,43 +186,11 @@ li a:hover {
 
 .gallery-item {
     background-color: #222;
+    box-shadow: 0px 0px 14px 0px #b18801;
     width: 300px;
-    border-radius: 100%;
-    height: 300px;
+    height: 400px;
     display: flex;
-    
-    align-items: center;
-    justify-content: center;
-}
-
-.gallery-item img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.caption {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-}
-.gallery {
-    display: flex;
-    gap: 20px;
-    text-align: center;
-    justify-content: center;
-}
-
-.gallery-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra todo */
-}
-
-.gallery-item {
-    background-color: #222;
-    padding: 20px;
-    display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
 }
@@ -230,6 +199,15 @@ li a:hover {
     width: 100%;
     max-width: 300px;
     border-radius: 10px;
+}
+
+.miel{
+    margin-left: 5vw;
+    margin-top: -5vh;
+}
+
+.imagenpequena  {
+    width: 10px;
 }
 
 .caption {
@@ -378,8 +356,9 @@ Osmo UI: https://slater.app/10324/23333.css */
   }
   
   .filter-bar {
-    background-color: #efeeec0f;
-    border: 1px solid #efeeec14;
+    background-color: #f3f3f376;
+    border: 1px solid #1f1f1efe;
+    padding: 1.125em 1.5em;;
     border-radius: .5em;
     padding: .5em;
     display: flex;
@@ -387,7 +366,7 @@ Osmo UI: https://slater.app/10324/23333.css */
   
   .filter-button {
     background-color: #0000;
-    border: 1px solid #efeeec00;
+    border: 1px solid #1f1f1efe;
     padding: 1.125em 1.5em;
     transition: border-color .2s;
     position: relative;
@@ -402,7 +381,7 @@ Osmo UI: https://slater.app/10324/23333.css */
     z-index: 1;
     font-size: 1.125em;
     position: relative;
-    color:var(--color-light);
+    color:#000000;
   }
   
   .tab-visual-wrap {
@@ -419,7 +398,7 @@ Osmo UI: https://slater.app/10324/23333.css */
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 150%;
     display: flex;
     position: absolute;
   }
@@ -439,22 +418,26 @@ Osmo UI: https://slater.app/10324/23333.css */
   .tab-content__heading {
     letter-spacing: -.02em;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-top: -30px;
     font-size: 1.75em;
     font-weight: 500;
     line-height: 1;
+    color: white;
   }
-  
+  .contentParrafo{
+    color: white !important;    
+  }
   .tab-layout-heading {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 4em;
     font-weight: 500;
     line-height: 1;
-  }
-  
-  .tab-content__button {
-    color: #131313;
+    color: white;
+}
+
+.tab-content__button {
+    color: #000000;
     justify-content: center;
     align-items: center;
     height: 4em;
@@ -474,6 +457,8 @@ Osmo UI: https://slater.app/10324/23333.css */
     padding: 40px;
     background-color: rgb(18, 18, 18);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+
 }
 
 .sectionaboutme-text {
@@ -747,102 +732,131 @@ input, textarea {
     text-align: center;
 }
 
-ul {
-    list-style: none;
-}
-
-.example-2 {
+.footer-container {
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    max-width: 300px;
+    text-align: left;
+}
+
+
+.footer-section strong, a {
+    color: white !important;
+    font-size: 1.2rem;
+}
+.socials-container {
+    display: flex;
+    gap: 15px;
     justify-content: center;
+}
+
+.social {
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid white;
 }
+ /* boton de google maps */
 
-.example-2 .icon-content {
-    margin: 0 10px;
+ /* From Uiverse.io by JaydipPrajapati1910 */ 
+.loader {
+    width: 44.8px;
+    height: 44.8px;
     position: relative;
-}
-
-.example-2 .icon-content .tooltip {
+    transform: rotate(45deg);
+    margin-left: 5vw;
+  }
+  
+  .loader:before,
+  .loader:after {
+    content: "";
     position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.example-2 .icon-content:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    top: -50px;
-}
-
-.example-2 .icon-content a {
-    position: relative;
-    overflow: hidden;
+    inset: 0;
+    border-radius: 50% 50% 0 50%;
+    background: #0000;
+    background-image: radial-gradient(circle 11.2px at 50% 50%,#0000 94%, #ff4747);
+  }
+  
+  .loader:after {
+    animation: pulse-ytk0dhmd 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+  }
+  
+  @keyframes pulse-ytk0dhmd {
+    to {
+      transform: perspective(336px) translateZ(168px);
+      opacity: 0;
+    }
+  }
+    
+  
+/* From Uiverse.io by vinodjangid07 */ 
+.socials-container {
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 40px;
+    background-color: #333333;
+  }
+  .social {
     width: 50px;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    color: #4d4d4d;
-    background-color: #fff;
-    transition: all 0.3s ease-in-out;
-}
-
-.example-2 .icon-content a:hover {
-    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-}
-
-.example-2 .icon-content a svg {
-    position: relative;
-    z-index: 1;
-    width: 30px;
-    height: 30px;
-}
-
-.example-2 .icon-content a:hover {
-    color: white;
-}
-
-.example-2 .icon-content a .filled {
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: #000;
-    transition: all 0.3s ease-in-out;
-}
-
-.example-2 .icon-content a:hover .filled {
-    height: 100%;
-}
-
-/* Estilos para cada red social */
-.example-2 .icon-content a[data-social="whatsapp"] .filled,
-.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
-    background-color: #128c7e;
-}
-
-.example-2 .icon-content a[data-social="facebook"] .filled,
-.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
-    background-color: #3b5998;
-}
-
-.example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-    background: linear-gradient(45deg, #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
-}
-
-.example-2 .icon-content a[data-social="maps"] .filled,
-.example-2 .icon-content a[data-social="maps"] ~ .tooltip {
-    background-color: #4285F4;
-}
+    border: 1px solid rgb(194, 194, 194);
+  }
+  .twitter:hover {
+    background: linear-gradient(45deg, #66757f, #00acee, #36daff, #dbedff);
+  }
+  .facebook:hover {
+    background: linear-gradient(45deg, #134ac0, #316ff6, #78a3ff);
+  }
+  .google-plus:hover {
+    background: linear-gradient(45deg, #872419, #db4a39, #ff7061);
+  }
+  .instagram:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: -webkit-linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  .social svg {
+    fill: white;
+    height: 20px;
+  }
+  
